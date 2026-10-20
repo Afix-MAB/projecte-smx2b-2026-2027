@@ -22,6 +22,8 @@ Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i env
 
 Variables: temperatura, humitat, voltatge, tensió.
 
+L'objectiu d'aquest projecte és facilitar l'adminisstració de l'estat dels endolls de grans edificis, moltes vegades i han zones d'edificis que no ss'utilitzen, en conseqüencia si hi han endolls en mal estat no és donen compte, per tant per assolir un manteniment satisfactori dels endolls i reduir el risc d'incendi per endolls en mal estat, aquests endolls envien les seves variables i aixi poden ser monitoritzats facilment.
+
 
 ### SafeTracking
 
