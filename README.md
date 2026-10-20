@@ -50,6 +50,9 @@ BoardSinc inclou el disseny i el desenvolupament d'una eina digital que actuï c
 
 
 ### Remote-Smart-Plugs
+Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i enviaran las seves variables a un servidor on podran ser vists desde una pagina web entrant amb un usuari on podras veure les avriables dels endolls agregats a la compte.
+
+Variables: temperatura, humitat, voltatge, tensió.
 
 
 ### SafeTracking
