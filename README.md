@@ -243,7 +243,7 @@ Variables: temperatura, humitat, voltatge, tensió.
 ### SafeTracking
 #### Context
 El meu projecte té com a objectiu fer que els clients online puguin monitorar el seu paquet de manera interactiva i verificar que el seu paquet no s'ha fet malbé, especialment en casos on els productes demanats siguin objectes o materials que es puguin fer malbé en entorns humits, en una temperatura específica o si és molt fràgil, com per exemple: un portàtil amb corrosió a causa d'un alt nivell d'humitat, un bloc de gel que s'ha desfet a causa d'una temperatura alta, una col·lecció de plats que s'ha trencat degut a que el paquet ha rebut molts cops durant el viatge. El projecte principalment volia que és pugui veure remotament i en temps real el transport dels paquets, però com que serià molt complicat, només podrà mostrar les dades un cop ha arribat el paquet.
-![Dibux del Projecte](img/SafeTrackingDibuix.jpg)
+![Dibuix del Projecte](/img/SafeTrackingDibuix.jpg)
 #### Abast
 ##### Qué tindrà el sistema
 1. Un sistema de cold chain per vigilar l'estat del producte 
