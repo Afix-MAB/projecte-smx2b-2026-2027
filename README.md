@@ -41,7 +41,7 @@ graph TD;
 
 #### Abast del projecte
 
-Es tindrà en compte en la creació del projecte, els usuaris que necessiten el servei de monitoratge (els clients), la forma de la xarxa de forma lògica, s'intentarà posar en practica, el servidor privat en xarxa per poder establir la xarxa, els dispositius Raspberry per inicialitzar la connexió.
+Es tindrà en compte en la creació del projecte, els usuaris que necessiten el servei de monitoratge (els clients), la forma de la xarxa lògica, s'intentarà posar en practica, el servidor privat en xarxa per poder establir la connexió i els dispositius Raspberry per inicialitzar el tunel.
 
 #### Diagrama de Projecte
 
