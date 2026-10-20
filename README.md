@@ -1,0 +1,1 @@
+# projecte-smx2b-2026-2027
