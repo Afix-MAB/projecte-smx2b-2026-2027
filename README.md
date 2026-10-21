@@ -151,7 +151,7 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 <img src="img/imagen(1).png" alt="Esquema del projecte PackGo" width="300"> <img src="img/imagen.png" alt="Segon esquema del projecte PackGo" width="300">
 
 
-### RBridge
+### ["RBridge"](https://github.com/Afix-MAB/RBridge)
 
 
 #### Context del projecte
