@@ -2,7 +2,7 @@
 
 Llista de projectes d'SMX2B del curs 2026-2027.
 
-### BoardSinc
+### [BoardSinc](https://github.com/Khania93/BoardSinc)
 
 ###### Context i situació inicial:
 
