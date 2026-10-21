@@ -243,7 +243,7 @@ Variables: temperatura, humitat, voltatge, tensió.
 ### SafeTracking
 
 
-### [WearSafe]()
+### [WearSafe](https://github.com/cuencaaa11/Projecte-Roba)
 WearSafe: resum del projecte
 
 WearSafe sera una empresa que ven un rellotge intel·ligent amb GPS i un servei web. L’objectiu és que les famílies sàpiguen on és el seu fill i rebin un avís ràpid si hi ha algun perill. Nosaltres fem de l’empresa que dissenya i implanta tot el sistema
