@@ -88,7 +88,7 @@ Quan l'usuari seleccioni una opció, el sistema enviarà la informació al progr
 
 (falta més)
 
-[Metrocount](https://github.com/huporu/Metrocount)
+### [Metrocount](https://github.com/huporu/Metrocount)
 
 Desenvolupament d'una aplicacio per saber la quantitat que tan ple va el metro de Barcelona
  
