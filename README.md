@@ -121,7 +121,7 @@ També en la part de recollida de dades els repetidors de wifi que hi ha que ser
 Per això la nostra visió és fer que les dades siguin aproximades, encara que sempre hi busquem que sigui el més precís possible resulta ser que es una tasca bastant complicada saber amb exactitud la quantitat real dels passatgers, per això la nostra idea és fer una barra amb colors (per exemple de verd a vermell) en la qual hi hagi una fletxa que indiqui que tan ocupat està el tren segons les dades recollides dels sensors.
 
 
-### PackGo
+### [PackGo](https://github.com/advaro-dotcom/PackGO)
 #### Projecte intermodular PackGo
 ##### Idea principal del projecte
 La idea principal del meu projecte és crear una empresa de repartiment de paquets per als pobles, perquè penso que podria ser molt útil tant per a les grans empreses de repartiment com per als habitants dels pobles. D'aquesta manera, es podrien evitar alguns problemes relacionats amb el repartiment. Les grans empreses tenen molts problemes a l'hora de repartir paquets en pobles petits, ja que han de fer molts desplaçaments i perdre molt de temps per entregar pocs paquets. Amb aquest projecte, vull fer que el repartiment sigui més fàcil, rapid i economic. Així poder evitar problemes o retards per part de les empreses. Avui en dia tothom compra paquets a internet que han de rebre a casa, per tant serà una empresa amb una idea molt útil i utilitzable per a tothom.
