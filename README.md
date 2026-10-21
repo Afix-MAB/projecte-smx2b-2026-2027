@@ -234,7 +234,7 @@ flowchart LR;
     WPub[Web] --> DB
 ``` 
 
-### Remote-Smart-Plugs
+### [Remote-Smart-Plugs](https://github.com/Manuel-G-P/remote-smart-plugs)
 Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i enviaran las seves variables a un servidor on podran ser vists desde una pagina web entrant amb un usuari on podras veure les avriables dels endolls agregats a la compte.
 
 Variables: temperatura, humitat, voltatge, tensió.
