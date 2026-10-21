@@ -240,7 +240,29 @@ Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i env
 Variables: temperatura, humitat, voltatge, tensió.
 
 
-### SafeTracking
+### [SafeTracking](https://github.com/aibale08/SafeTracking/)
+#### Context
+El meu projecte té com a objectiu fer que els clients online puguin monitorar el seu paquet de manera interactiva i verificar que el seu paquet no s'ha fet malbé, especialment en casos on els productes demanats siguin objectes o materials que es puguin fer malbé en entorns humits, en una temperatura específica o si és molt fràgil, com per exemple: un portàtil amb corrosió a causa d'un alt nivell d'humitat, un bloc de gel que s'ha desfet a causa d'una temperatura alta, una col·lecció de plats que s'ha trencat degut a que el paquet ha rebut molts cops durant el viatge. El projecte principalment volia que és pugui veure remotament i en temps real el transport dels paquets, però com que serià molt complicat, només podrà mostrar les dades un cop ha arribat el paquet.
 
+![Dibuix del Projecte](/img/SafeTrackingDibuix.jpg)
+
+#### Abast
+##### Qué tindrà el sistema
+1. Un sistema de cold chain per vigilar l'estat del producte 
+2. Una microbit per crear un prototip del dispositiu
+3. Una micro SSD per emmagatzemar les dades
+4. Sensors de temperatura per detectar la temperatura
+5. Sensors d'humitat per detectar l'humitat
+6. Grafana per poder visualitzar les dades rebudes 
+7. 2 pàgines web, una pública per veure les dades i una per configurar el dispositiu incorporat al paquet
+8. Un mesurador de gravetat per mesurar els cops que ha rebut el paquet
+9. Una base de dades Influx DB que es farà servir per emmagatzemar les dades que laa micro SSD ha anat recopilant al llarg del viatje
+##### Què es queda fora
+1. GPS per veure el transport i la ruta que està fent el transportista en temps real
+2. Connexió Wi-Fi incorporada al paquet/metodé de transport per facilitar la connexió en temps real 
+3. Poder regular la temperatura amb algun sistema de refrigeració i calefacció
+4. Starlink connexió via satel·lit per veure paquets transportats com per exemple en el mar
+5. metodés de transport especialitzats pel transport de productes amb aquesta idea
+6. incorporar connexió de xarxa móbil per veure en temps real els paquets en llocs locals
 
 ### WearSafe
