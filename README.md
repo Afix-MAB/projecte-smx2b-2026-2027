@@ -216,14 +216,24 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 
 #### Context del projecte
 
-Es crearà una eina per poder fer monitoratge d'equips que estiguin sota d'un CG-NAT, es resoldrà el problema de què els CG-NAT
+Fa relativament poc, molts ISP (El proveidor de xarxa), utilitzen un tipus de router on n'hi ha un router pare, es a dir, que molts routers estan connectats a un servidor. 
 
-no tenen cap manera tradicional per poder tenir ports oberts per a serveis o shells disponibles en xarxa que siguin disponibles des de 
+**¿Quin problema té?** 
 
-Una xarxa pública diferent, ja que té una forma de xarxa lògica d'aquesta manera.
+Doncs a l'hora de tenir una IP Publica, el servidor anomenat CG-NAT (Carrier-grade NAT), ens dona una IP Privada dins de la seva xarxa, fent que el servidor funcioni només amb una IP Publica, aixi estalviant IP's publiques, que actualment tenim un problema global amb aquestes. 
+```mermaid
+graph TD;
+    ROUTER1-->|20.40.20.1|CG-NAT;
+    ROUTER1-->|PRIVATE IP|CG-NAT;
+    CG-NAT-->|PUBLIC IP|INTERNET;
+```
+Com a usuari normal no té cap problema per cercar en internet ni ens llimita, el vertader problema es quan un servei tecnic remot intenta fer un servei, normalment el que es feia es utilitzar la IP publica del router per tenir un port o un tunnel directe a la xarxa del client, on el CG-NAT, fa que no tinguem possibilitat de connectar-se'n de forma tradicional.
+
+**¿Quina solució n'hi ha?**
+
+El nostre startup, crearem un eina per fer monitoratge d'equips que estiguin sota d'un CG-NAT, es resoldrà el problema de l'accesibilitat a nodes interns. Es podrà veure desde el diagrama que el CG-NAT té la IP Publica, fent aquesta restricció.
 
 ```mermaid
-
 graph TD;
     node1-->|10.162.114.201|ROUTER1;
     node2-->|10.162.114.202|ROUTER1;
@@ -242,9 +252,9 @@ Es tindrà en compte en la creació del projecte, els usuaris que necessiten el 
 
 #### Diagrama de Projecte
 
-Els agents en el projecte són els següents: 
+**Els agents en el projecte són els següents:**
 
-1. Xarxa
+**1. Xarxa**
 
  * Tècnic - Amb el seu portàtil es podrà connectar en el VPS. 
 
@@ -262,7 +272,7 @@ Els agents en el projecte són els següents:
 
  > S'utilitzarà el VPS de forma simulada, també hauria de simular el portail web per les peticions del reconciliador per la base de dades.
 
-2. Gestió
+**2. Gestió**
 
  * Portal web - On el tècnic demana les sessions.
 
@@ -274,16 +284,15 @@ Els agents en el projecte són els següents:
 
  * Monitoratge - Avisa si algun node falla.
 
-3. Serveis
+**3. Serveis**
 
  * Web pública - Presenta el servei del tècnic.
 
-4. Simulació
+**4. Simulació**
 
  * Proxmox serà l'hipervisor que usaré per crear xarxes internes, els hosts, els routers, ja que és molt més avançat que VirtualBox, i té moltes més funcionalitats que ens permetran simular-ho. 
 
 ```mermaid
-
 flowchart LR;
     T[Técnic] -->|Bridge| V[VPS]
     VPS -->|Bridge| P[Pasarela client]
@@ -293,6 +302,7 @@ flowchart LR;
     VPS --> FW[Firewall]
     WPub[Web] --> DB
 ``` 
+
 
 ### [Remote-Smart-Plugs](https://github.com/Manuel-G-P/remote-smart-plugs)
 Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i enviaran las seves variables a un servidor on podran ser vists desde una pagina web entrant amb un usuari on podras veure les avriables dels endolls agregats a la compte.
