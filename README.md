@@ -295,12 +295,29 @@ flowchart LR;
 ``` 
 
 ### [Remote-Smart-Plugs](https://github.com/Manuel-G-P/remote-smart-plugs)
-Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i enviaran las seves variables a un servidor on podran ser vists desde una pagina web entrant amb un usuari on podras veure les avriables dels endolls agregats a la compte.
+Es tracta d'un dispositiu i un sistema que en conjunt serveixen per monitoritzar en temps real l'estat dels endolls, tot per facilitar el manteniment dels endolls en instalacións d'amples dimensions.
 
-Variables: temperatura, humitat, voltatge, tensió.
+Aquest projecte no és aplicable unicament en certs sectors, es tracta d'un projecte aplicable a qualdsevol sector sempre que utilitzin alguna instalació d'amples dimensions.
 
-L'objectiu d'aquest projecte és facilitar l'adminisstració de l'estat dels endolls de grans edificis, moltes vegades i han zones d'edificis que no ss'utilitzen, en conseqüencia si hi han endolls en mal estat no és donen compte, per tant per assolir un manteniment satisfactori dels endolls i reduir el risc d'incendi per endolls en mal estat, aquests endolls envien les seves variables i aixi poden ser monitoritzats facilment.
+Aquest projecte és en poques paraules una modificació dels edolls i per tant de l'infraestructura electrica, aixi com la creació d'una infraestructura informatica especificament per recabar, organitzar, i mostrar les diferent variables dels endolls.
 
+El projecte aporta un metode simple de monitorització a gran escala dels endolls de les instalcions, que evita problemes latents en l'instalació electrica.
+
+Els endolls envien les variables dels seus sensors a traves de routers especialitzats que estan configurats per permetre la conexio de qualsevol endoll amb les credencials electroniques creades per als endolls que ya venen establertes de fabrica, d'aqui s'envien per internet als servidor de  la companyia on poden ser consultades via web en qualsevol moment, per poder enllaçar els endolls es requereix d'un codi unic i una contrasenya grabads en la part del endoll que queda dins de la pared un cop instalat.
+
+En resum el sistema consta de:
+
+-Els endolls i els seus sensors.
+
+-Router especialitzats per recollir dades dels endolls reconeguts a traves de credencialds informatiques.
+
+-Bases de dades en els servidors de l'empresa on s'ordenen les dades.
+
+-Una web un contactar l'empresa, o consultar els endolls als quals hagis posat el codi i contrasenya corresponents.
+
+Tot aixó ha de ser utilitzat per el responsable de l'instalció electrica de les instalacions, a traves de la web nomes té que revisar cada x temps les variables dels endolls i en cas d'irregularitats anar a revisar o contactar amb qui correspongui, aixo per evitar posibles incidents ocasionats per endolls en mal estat sense necesitat de fer comprobacions manuals de cada endoll cada x temps, el que és un gast de temps considerable.
+
+L'empresa s'encarrega de practicament tot el que esta escrit en el resum del que consta el sistema, es a dir, en aquest projecte nosaltres dissenyem l'endoll, la programació dels seus sensors, el sistema de credencials entre els endolls i els routers, no obstant no ens fem carrec ni del disseny ni la fabricació dels routers, i ens encarraguem de la programació de la web i la base de dades.
 
 ### [SafeTracking](https://github.com/aibale08/SafeTracking/)
 #### Context
