@@ -37,7 +37,7 @@ Preservar l'experiència tradicional: mantenir les miniatures i els daus físics
 
 BoardSinc inclou el disseny i el desenvolupament d'una eina digital que actuï com a complement dels jocs de wargame tradicionals. Aquesta eina ha de permetre gestionar els diferents elements del joc des d'un únic entorn, facilitant-ne la consulta i l'administració durant totes les fases de la partida.
 
-### [HoloTech360](https://github.com/Nico-Frias/test)
+### [HoloTech360](https://github.com/Nico-Frias/HoloTech360)
 
 #### Projecte Hologrames 
 En aquest projecte, el que volem fer és implementar nu sistema d'holoframes que es pugui utilitzar en diferents situacions, ja sigui en l¡àmbit acadèmic, personal o empresarial.
@@ -91,7 +91,7 @@ D'aquesta manera, podrem representar objectes, components informàtics o persona
 
 Cal tenir en compte que aquest sistema no genera hologrames reals, sinó un efecte visual mitjançant el reflex de les imatges sobre una superfície transparent.
 
-####4. HoloClass — Professor virtual
+#### 4. HoloClass — Professor virtual
 HoloClass serà la part educativa del nostre projecte.
 
 La idea és crear un professor virtual que pugui explicar diferents temes mitjançant animacions i representacions hologràfiques.
@@ -216,14 +216,24 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 
 #### Context del projecte
 
-Es crearà una eina per poder fer monitoratge d'equips que estiguin sota d'un CG-NAT, es resoldrà el problema de què els CG-NAT
+Fa relativament poc, molts ISP (El proveidor de xarxa), utilitzen un tipus de router on n'hi ha un router pare, es a dir, que molts routers estan connectats a un servidor. 
 
-no tenen cap manera tradicional per poder tenir ports oberts per a serveis o shells disponibles en xarxa que siguin disponibles des de 
+**¿Quin problema té?** 
 
-Una xarxa pública diferent, ja que té una forma de xarxa lògica d'aquesta manera.
+Doncs a l'hora de tenir una IP Publica, el servidor anomenat CG-NAT (Carrier-grade NAT), ens dona una IP Privada dins de la seva xarxa, fent que el servidor funcioni només amb una IP Publica, aixi estalviant IP's publiques, que actualment tenim un problema global amb aquestes. 
+```mermaid
+graph TD;
+    ROUTER1-->|20.40.20.1|CG-NAT;
+    ROUTER1-->|PRIVATE IP|CG-NAT;
+    CG-NAT-->|PUBLIC IP|INTERNET;
+```
+Com a usuari normal no té cap problema per cercar en internet ni ens llimita, el vertader problema es quan un servei tecnic remot intenta fer un servei, normalment el que es feia es utilitzar la IP publica del router per tenir un port o un tunnel directe a la xarxa del client, on el CG-NAT, fa que no tinguem possibilitat de connectar-se'n de forma tradicional.
+
+**¿Quina solució n'hi ha?**
+
+El nostre startup, crearem un eina per fer monitoratge d'equips que estiguin sota d'un CG-NAT, es resoldrà el problema de l'accesibilitat a nodes interns. Es podrà veure desde el diagrama que el CG-NAT té la IP Publica, fent aquesta restricció.
 
 ```mermaid
-
 graph TD;
     node1-->|10.162.114.201|ROUTER1;
     node2-->|10.162.114.202|ROUTER1;
@@ -242,9 +252,9 @@ Es tindrà en compte en la creació del projecte, els usuaris que necessiten el 
 
 #### Diagrama de Projecte
 
-Els agents en el projecte són els següents: 
+**Els agents en el projecte són els següents:**
 
-1. Xarxa
+**1. Xarxa**
 
  * Tècnic - Amb el seu portàtil es podrà connectar en el VPS. 
 
@@ -262,7 +272,7 @@ Els agents en el projecte són els següents:
 
  > S'utilitzarà el VPS de forma simulada, també hauria de simular el portail web per les peticions del reconciliador per la base de dades.
 
-2. Gestió
+**2. Gestió**
 
  * Portal web - On el tècnic demana les sessions.
 
@@ -274,16 +284,15 @@ Els agents en el projecte són els següents:
 
  * Monitoratge - Avisa si algun node falla.
 
-3. Serveis
+**3. Serveis**
 
  * Web pública - Presenta el servei del tècnic.
 
-4. Simulació
+**4. Simulació**
 
  * Proxmox serà l'hipervisor que usaré per crear xarxes internes, els hosts, els routers, ja que és molt més avançat que VirtualBox, i té moltes més funcionalitats que ens permetran simular-ho. 
 
 ```mermaid
-
 flowchart LR;
     T[Técnic] -->|Bridge| V[VPS]
     VPS -->|Bridge| P[Pasarela client]
@@ -294,13 +303,31 @@ flowchart LR;
     WPub[Web] --> DB
 ``` 
 
+
 ### [Remote-Smart-Plugs](https://github.com/Manuel-G-P/remote-smart-plugs)
-Aquest projecte tracta de endolls inteligents que es conectaran a la xarax i enviaran las seves variables a un servidor on podran ser vists desde una pagina web entrant amb un usuari on podras veure les avriables dels endolls agregats a la compte.
+Es tracta d'un dispositiu i un sistema que en conjunt serveixen per monitoritzar en temps real l'estat dels endolls, tot per facilitar el manteniment dels endolls en instalacións d'amples dimensions.
 
-Variables: temperatura, humitat, voltatge, tensió.
+Aquest projecte no és aplicable unicament en certs sectors, es tracta d'un projecte aplicable a qualdsevol sector sempre que utilitzin alguna instalació d'amples dimensions.
 
-L'objectiu d'aquest projecte és facilitar l'adminisstració de l'estat dels endolls de grans edificis, moltes vegades i han zones d'edificis que no ss'utilitzen, en conseqüencia si hi han endolls en mal estat no és donen compte, per tant per assolir un manteniment satisfactori dels endolls i reduir el risc d'incendi per endolls en mal estat, aquests endolls envien les seves variables i aixi poden ser monitoritzats facilment.
+Aquest projecte és en poques paraules una modificació dels edolls i per tant de l'infraestructura electrica, aixi com la creació d'una infraestructura informatica especificament per recabar, organitzar, i mostrar les diferent variables dels endolls.
 
+El projecte aporta un metode simple de monitorització a gran escala dels endolls de les instalcions, que evita problemes latents en l'instalació electrica.
+
+Els endolls envien les variables dels seus sensors a traves de routers especialitzats que estan configurats per permetre la conexio de qualsevol endoll amb les credencials electroniques creades per als endolls que ya venen establertes de fabrica, d'aqui s'envien per internet als servidor de  la companyia on poden ser consultades via web en qualsevol moment, per poder enllaçar els endolls es requereix d'un codi unic i una contrasenya grabads en la part del endoll que queda dins de la pared un cop instalat.
+
+En resum el sistema consta de:
+
+-Els endolls i els seus sensors.
+
+-Router especialitzats per recollir dades dels endolls reconeguts a traves de credencialds informatiques.
+
+-Bases de dades en els servidors de l'empresa on s'ordenen les dades.
+
+-Una web un contactar l'empresa, o consultar els endolls als quals hagis posat el codi i contrasenya corresponents.
+
+Tot aixó ha de ser utilitzat per el responsable de l'instalció electrica de les instalacions, a traves de la web nomes té que revisar cada x temps les variables dels endolls i en cas d'irregularitats anar a revisar o contactar amb qui correspongui, aixo per evitar posibles incidents ocasionats per endolls en mal estat sense necesitat de fer comprobacions manuals de cada endoll cada x temps, el que és un gast de temps considerable.
+
+L'empresa s'encarrega de practicament tot el que esta escrit en el resum del que consta el sistema, es a dir, en aquest projecte nosaltres dissenyem l'endoll, la programació dels seus sensors, el sistema de credencials entre els endolls i els routers, no obstant no ens fem carrec ni del disseny ni la fabricació dels routers, i ens encarraguem de la programació de la web i la base de dades.
 
 ### [SafeTracking](https://github.com/aibale08/SafeTracking/)
 #### Context
