@@ -330,22 +330,27 @@ Tot aixó ha de ser utilitzat per el responsable de l'instalció electrica de le
 L'empresa s'encarrega de practicament tot el que esta escrit en el resum del que consta el sistema, es a dir, en aquest projecte nosaltres dissenyem l'endoll, la programació dels seus sensors, el sistema de credencials entre els endolls i els routers, no obstant no ens fem carrec ni del disseny ni la fabricació dels routers, i ens encarraguem de la programació de la web i la base de dades.
 
 ### [SafeTracking](https://github.com/aibale08/SafeTracking/)
-#### Context
-El meu projecte té com a objectiu fer que els clients online puguin monitorar el seu paquet de manera interactiva i verificar que el seu paquet no s'ha fet malbé, especialment en casos on els productes demanats siguin objectes o materials que es puguin fer malbé en entorns humits, en una temperatura específica o si és molt fràgil, com per exemple: un portàtil amb corrosió a causa d'un alt nivell d'humitat, un bloc de gel que s'ha desfet a causa d'una temperatura alta, una col·lecció de plats que s'ha trencat degut a que el paquet ha rebut molts cops durant el viatge. El projecte principalment volia que és pugui veure remotament i en temps real el transport dels paquets, però com que serià molt complicat, només podrà mostrar les dades un cop ha arribat el paquet.
-
-![Dibuix del Projecte](/img/SafeTrackingDibuix.jpg)
-
+![Dibux del Projecte](img/SafeTrackingDibuix.jpg)
+#### Context 
+##### Què és el meu projecte
+El meu projecte és un aparell que vingui incorportat als paquets de correus que pugui emmagatzemar i mostrar l'estat del contingut del paquet, com per exemple si s'ha trencat, si s'ha desfet per la calor o si s'ha oxidat per humitat alta mitjançant un sistema/app que permeti visualitzar les dades en un gràfic de línies o en un cás hipotétic, poder veur-ho en temps real tant on està el paquet actualment, el nivell de temperatura que n'hi ha en aquell moment, el clima o el nivell d'humitat, tot en temps real i que també pugui mostrar la distància del paquet fins al destinatari estil com els GPS que tenen els cotxes o tenen els telefóns móbils, fins i tot que puguin mantenir els paquets en un bon estat i evitar cap dany.
+##### Perquè això?
+Perque moltes webs i apps de compres online només et donen un sistema poc informatiu i molt bàsic amb 3 fases les cuals només indiquen en quina data va començar l'entrega, que està en procés d'entrega i la data on es suposa que arribarà el paquet i una fase on indica que ja ha arribat, a vegades aquest sistema falla o per altres circumstàncies el paquet arriba més tard del que va indicar el sistema, o el sistema indica que el paquet ja ha arribat pero tu no el rebs fins uns dies després, vull que el meu projecte pugui renovar aquest sistema amb nova tecnologia i  donar informació més precisa i completa als clients sobre els seus paquets.
+##### A quí està dirigit?
+Està dirigit a les empreses de correus o botigues online com Amazon, que puguin incorporar aquest sistema per guanyar-se més la confiança dels clients i evitar les males ressenyes o queixes.
+##### Com es fà servir
+Primer de tot, en el càs del prototip, l'empresa encarregada d'enviar el paquet configura el dispositiu la tolerància i el límit que té el producte a una temperatura, humitat o gravetat específica fent servir un sistema especialitzat per això, al finalitzar la configuració el dispositiu s'enganxa al paquet i ja està preparat per l'enviament, un cop el paquet ha arribat, el client pot extreure el dispositiu i veure que li ha pasat al paquet mitjançant 3 LEDs que canvien de color depenent de si el paquet s'ha passat del limit o no, anant de verd, que significa que està en bon estat, a taronja, que significa que ha arribat a la tolerància espeficicada en algun moment i vermell que significa que s'ha passat del límit, en el càs de que el client vulgui veure en quin moment ha ocorregut això, el client pot pujar les dades del dispositiu mitjançant un sistema que desrpés permeti mostrar-les en un gràfic de línies, en càs del dispositiu complet, tindrà el mateix sistema que el prototip, però, podrà mostrar les dades en temps real mentre esta sent transportat en un sistema que el client pugui consultar en qualsevol moment, i en càs de que el paquet rebi cap dany, aquest dispositiu pugui enviar un missatge d'alerta al client.
 #### Abast
 ##### Qué tindrà el sistema
 1. Un sistema de cold chain per vigilar l'estat del producte 
 2. Una microbit per crear un prototip del dispositiu
-3. Una micro SSD per emmagatzemar les dades
+3. Una micro SD per emmagatzemar les dades
 4. Sensors de temperatura per detectar la temperatura
 5. Sensors d'humitat per detectar l'humitat
 6. Grafana per poder visualitzar les dades rebudes 
 7. 2 pàgines web, una pública per veure les dades i una per configurar el dispositiu incorporat al paquet
 8. Un mesurador de gravetat per mesurar els cops que ha rebut el paquet
-9. Una base de dades Influx DB que es farà servir per emmagatzemar les dades que laa micro SSD ha anat recopilant al llarg del viatje
+9. Una base de dades Influx DB que es farà servir per emmagatzemar les dades que la micro SD ha anat recopilant al llarg del viatje
 ##### Què es queda fora
 1. GPS per veure el transport i la ruta que està fent el transportista en temps real
 2. Connexió Wi-Fi incorporada al paquet/metodé de transport per facilitar la connexió en temps real 
