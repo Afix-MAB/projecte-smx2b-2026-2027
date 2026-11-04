@@ -2,7 +2,7 @@
 
 Llista de projectes d'SMX2B del curs 2026-2027.
 
-  - [BoardSync](#BoardSync)
+  - [BoardSinc](#BoardSinc)
   - [HoloTech360](#HoloTech360)
   - [MetroCount](#Metrocount)
   - [PackGo](#PackGo)
