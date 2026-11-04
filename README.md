@@ -2,6 +2,15 @@
 
 Llista de projectes d'SMX2B del curs 2026-2027.
 
+  - [BoardSync](#BoardSync)
+  - [HoloTech360](#HoloTech360)
+  - [MetroCount](#Metrocount)
+  - [PackGo](#PackGo)
+  - [RBridge](#RBridge)
+  - [Remote-Smart-Plugs](#Remote-Smart-Plugs)
+  - [SafeTracking](#SafeTracking)
+  - [WearSafe](#WearSafe)
+
 ### [BoardSinc](https://github.com/Khania93/BoardSinc)
 
 ###### Context i situació inicial:
@@ -39,7 +48,7 @@ BoardSinc inclou el disseny i el desenvolupament d'una eina digital que actuï c
 
 ### [HoloTech360](https://github.com/Nico-Frias/HoloTech360)
 
-#### Projecte Hologrames 
+#### Projecte Hologrames
 En aquest projecte, el que volem fer és implementar nu sistema d'holoframes que es pugui utilitzar en diferents situacions, ja sigui en l¡àmbit acadèmic, personal o empresarial.
 
 Amb els hologrames volem facilitar diferents tasques, com visualtizar productes en tres dimensions, disposar d'un professor virtual que expliqui contignuts o tenir un assistent informàtic que ajudi a detectar problemes en un ordinador.
@@ -56,7 +65,7 @@ Aquestes funcionalitats seran:
 
 La nostra idea és que les tres funcionalitats es puguin utilitzar amb un mateix dispositiu hologràfic, sense necessitat de construir-ne un de diferent per a cada funció.
 
-##### 2. Objectius del projecte 
+##### 2. Objectius del projecte
 
 L'objectiu principal és crear un sistema hologràfic interactiu que combini diferents coneixements que hem après durant el cicle de Sistemes Microinformatics i Xarxes locals. (SMX)
 
@@ -150,7 +159,7 @@ Aquestes funcions serien ampliacions, ja que primer volem aconseguir que la visu
 ### [Metrocount](https://github.com/huporu/Metrocount)
 
 Desenvolupament d'una aplicacio per saber la quantitat que tan ple va el metro de Barcelona
- 
+
 ![Text de prova](/img/metrocount1.jpg)
 ![Imatge esquema resumit](/img/metrocount2.jpg)
 
@@ -169,7 +178,7 @@ La nostra idea és fer-hi en Python una demostració de com es podria fer un com
 
 Resumidament, el que teníem pensat nosaltres és implementar uns sensors just a la porta dels vagons del metro perquè així compti les persones que hi passen, la nostra forma que havíem pensat d'implementar els sensors es tractaria de dos sensors, un que s'encarregui de comptar els que entren i l'altre dels que surten, si és possible fer els sensors s'actualitzin de manera ràpida i freqüent (cada 0,5 segons per exemple), i que els infrarojos sàpiguen diferenciar quan passen persones i quan no. <br>
 
- 
+
 (D'Aquest tema s'hi ha en parlaré en un altra secció sobre els que se'ns queda fora de l'abast i quins problemes podrien sorgir)
 
 ##### Problemes i fora d'abast
@@ -217,11 +226,11 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 
 #### Context del projecte
 
-Fa relativament poc, molts ISP (El proveidor de xarxa), utilitzen un tipus de router on n'hi ha un router pare, es a dir, que molts routers estan connectats a un servidor. 
+Fa relativament poc, molts ISP (El proveidor de xarxa), utilitzen un tipus de router on n'hi ha un router pare, es a dir, que molts routers estan connectats a un servidor.
 
-**¿Quin problema té?** 
+**¿Quin problema té?**
 
-Doncs a l'hora de tenir una IP Publica, el servidor anomenat CG-NAT (Carrier-grade NAT), ens dona una IP Privada dins de la seva xarxa, fent que el servidor funcioni només amb una IP Publica, aixi estalviant IP's publiques, que actualment tenim un problema global amb aquestes. 
+Doncs a l'hora de tenir una IP Publica, el servidor anomenat CG-NAT (Carrier-grade NAT), ens dona una IP Privada dins de la seva xarxa, fent que el servidor funcioni només amb una IP Publica, aixi estalviant IP's publiques, que actualment tenim un problema global amb aquestes.
 ```mermaid
 graph TD;
     ROUTER1-->|20.40.20.1|CG-NAT;
@@ -257,11 +266,11 @@ Es tindrà en compte en la creació del projecte, els usuaris que necessiten el 
 
 **1. Xarxa**
 
- * Tècnic - Amb el seu portàtil es podrà connectar en el VPS. 
+ * Tècnic - Amb el seu portàtil es podrà connectar en el VPS.
 
- * WireGuard pel admin - És el túnel del tècnic fins al VPS. 
+ * WireGuard pel admin - És el túnel del tècnic fins al VPS.
 
- * WireGuard pel client - És el túnel que tindrà cada client. 
+ * WireGuard pel client - És el túnel que tindrà cada client.
 
  * FireWall - Per tindre un mínim de seguretat en la connexió, per només permetre la connexió a autoritzats.
 
@@ -291,7 +300,7 @@ Es tindrà en compte en la creació del projecte, els usuaris que necessiten el 
 
 **4. Simulació**
 
- * Proxmox serà l'hipervisor que usaré per crear xarxes internes, els hosts, els routers, ja que és molt més avançat que VirtualBox, i té moltes més funcionalitats que ens permetran simular-ho. 
+ * Proxmox serà l'hipervisor que usaré per crear xarxes internes, els hosts, els routers, ja que és molt més avançat que VirtualBox, i té moltes més funcionalitats que ens permetran simular-ho.
 
 ```mermaid
 flowchart LR;
@@ -302,7 +311,7 @@ flowchart LR;
     VPS --> DB[(BD)]
     VPS --> FW[Firewall]
     WPub[Web] --> DB
-``` 
+```
 
 
 ### [Remote-Smart-Plugs](https://github.com/Manuel-G-P/remote-smart-plugs)
@@ -332,7 +341,7 @@ L'empresa s'encarrega de practicament tot el que esta escrit en el resum del que
 
 ### [SafeTracking](https://github.com/aibale08/SafeTracking/)
 ![Dibux del Projecte](img/SafeTrackingDibuix.jpg)
-#### Context 
+#### Context
 ##### Què és el meu projecte
 El meu projecte és un aparell que vingui incorportat als paquets de correus que pugui emmagatzemar i mostrar l'estat del contingut del paquet, com per exemple si s'ha trencat, si s'ha desfet per la calor o si s'ha oxidat per humitat alta mitjançant un sistema/app que permeti visualitzar les dades en un gràfic de línies o en un cás hipotétic, poder veur-ho en temps real tant on està el paquet actualment, el nivell de temperatura que n'hi ha en aquell moment, el clima o el nivell d'humitat, tot en temps real i que també pugui mostrar la distància del paquet fins al destinatari estil com els GPS que tenen els cotxes o tenen els telefóns móbils, fins i tot que puguin mantenir els paquets en un bon estat i evitar cap dany.
 ##### Perquè això?
@@ -343,18 +352,18 @@ Està dirigit a les empreses de correus o botigues online com Amazon, que puguin
 Primer de tot, en el càs del prototip, l'empresa encarregada d'enviar el paquet configura el dispositiu la tolerància i el límit que té el producte a una temperatura, humitat o gravetat específica fent servir un sistema especialitzat per això, al finalitzar la configuració el dispositiu s'enganxa al paquet i ja està preparat per l'enviament, un cop el paquet ha arribat, el client pot extreure el dispositiu i veure que li ha pasat al paquet mitjançant 3 LEDs que canvien de color depenent de si el paquet s'ha passat del limit o no, anant de verd, que significa que està en bon estat, a taronja, que significa que ha arribat a la tolerància espeficicada en algun moment i vermell que significa que s'ha passat del límit, en el càs de que el client vulgui veure en quin moment ha ocorregut això, el client pot pujar les dades del dispositiu mitjançant un sistema que desrpés permeti mostrar-les en un gràfic de línies, en càs del dispositiu complet, tindrà el mateix sistema que el prototip, però, podrà mostrar les dades en temps real mentre esta sent transportat en un sistema que el client pugui consultar en qualsevol moment, i en càs de que el paquet rebi cap dany, aquest dispositiu pugui enviar un missatge d'alerta al client.
 #### Abast
 ##### Qué tindrà el sistema
-1. Un sistema de cold chain per vigilar l'estat del producte 
+1. Un sistema de cold chain per vigilar l'estat del producte
 2. Una microbit per crear un prototip del dispositiu
 3. Una micro SD per emmagatzemar les dades
 4. Sensors de temperatura per detectar la temperatura
 5. Sensors d'humitat per detectar l'humitat
-6. Grafana per poder visualitzar les dades rebudes 
+6. Grafana per poder visualitzar les dades rebudes
 7. 2 pàgines web, una pública per veure les dades i una per configurar el dispositiu incorporat al paquet
 8. Un mesurador de gravetat per mesurar els cops que ha rebut el paquet
 9. Una base de dades Influx DB que es farà servir per emmagatzemar les dades que la micro SD ha anat recopilant al llarg del viatje
 ##### Què es queda fora
 1. GPS per veure el transport i la ruta que està fent el transportista en temps real
-2. Connexió Wi-Fi incorporada al paquet/metodé de transport per facilitar la connexió en temps real 
+2. Connexió Wi-Fi incorporada al paquet/metodé de transport per facilitar la connexió en temps real
 3. Poder regular la temperatura amb algun sistema de refrigeració i calefacció
 4. Starlink connexió via satel·lit per veure paquets transportats com per exemple en el mar
 5. metodés de transport especialitzats pel transport de productes amb aquesta idea
