@@ -172,22 +172,22 @@ Desenvolupament d'una aplicacio per saber la quantitat que tan ple va el metro d
 
 ##### Context
 
-La nostra idea és fer-hi en Python una demostració de com es podria fer un comptador de persones en els vagons del metro de Barcelona perquè així a través d'una aplicació es pogués consultar que tan ocupat va el metro i llavors els passatgers poguessin decidir si és convenient entrar o no al vagó
+El nostre projecte de Metrocount s'emmarca com si fóssim uns treballadors de TMB (Transports Metropolitans de Barcelona) i volem implementar un sistema informàtic en unes plaques (per definir) capaç de comptar persones en els vagons del metro.
 
-##### Com es fara?
+##### Descripció
+El nostre sistema el que aportaria seria que les persones poguessin veure quantes persones hi ha en els vagons, això resoldria el problema que tenen dubtes sobre que tan ple van els vagons i si és millor agafar el metro o esperar-se a que hi passi un que hi té menys passatgers.<br>
 
-Resumidament, el que teníem pensat nosaltres és implementar uns sensors just a la porta dels vagons del metro perquè així compti les persones que hi passen, la nostra forma que havíem pensat d'implementar els sensors es tractaria de dos sensors, un que s'encarregui de comptar els que entren i l'altre dels que surten, si és possible fer els sensors s'actualitzin de manera ràpida i freqüent (cada 0,5 segons per exemple), i que els infrarojos sàpiguen diferenciar quan passen persones i quan no. <br>
+Pel nostre sistema havíem pensat a implementar una sèrie de tecnologies com seria uns sensors infrarojos en les portes del vagó perquè així hi puguin comptar quantes persones entren, un codi que es comuniqui amb els infrarojos i que sigui capaç de communicar-se perqué així poguin comptar les persones que hi entren i emmagatzemar-se perque es mostrin en una interficie i un servidor que mostri l'informació.<br>
 
-
-(D'Aquest tema s'hi ha en parlaré en un altra secció sobre els que se'ns queda fora de l'abast i quins problemes podrien sorgir)
-
+Aquest sistema estaria enfocat per aquelles persones que utilitzen el metro d'una manera regular i activa i es volen estalviar estar en vagons on hi està ple de gent.<br>
 ##### Problemes i fora d'abast
 
-Els problemes d'abast en els quals ens podríem arribar a trobar és la precisió d'aquestes dades, un dels principals reptes d'aquest projecte és que les dades no podran ser 100% precises, ja que podrien sorgir problemes com que hi ha una avalancha de persones que entrin juntes al vagó i que el sensor compta com si hagués entrat una persona, però en realitat hi ha entrat dues o tres persones o inclús més. <br>
+Els problemes d'abast en els quals ens podríem arribar a trobar és la precisió d'aquestes dades, un dels principals reptes d'aquest projecte és que les dades no podran ser 100% precises quan hi ha molta gent intentant entrar al metro o quan el wifi falla per un cert temps.<br>
 
-També en la part de recollida de dades els repetidors de wifi que hi ha que serveixen per enviar les dades cap al servidor sobre les persones podria fallar per culpa de l'alta demanda de persones que estiguessin utilitzant la xarxa<br>
+També en la part de recollida de dades els repetidors de wifi que hi ha que serveixen per enviar les dades cap al servidor sobre les persones podria fallar per culpa de l'alta demanda de persones que utilitzessin la xarxa<br>
+	
+El que entra en el projecte és el hardware i com estarà dissenyat la placa i la seva programació, però no el xassís i disseny, només tota la lògica i programació que hi ha dintre.<br>
 
-Per això la nostra visió és fer que les dades siguin aproximades, encara que sempre hi busquem que sigui el més precís possible resulta ser que es una tasca bastant complicada saber amb exactitud la quantitat real dels passatgers, per això la nostra idea és fer una barra amb colors (per exemple de verd a vermell) en la qual hi hagi una fletxa que indiqui que tan ocupat està el tren segons les dades recollides dels sensors.
 
 
 ### [PackGo](https://github.com/advaro-dotcom/PackGO)
