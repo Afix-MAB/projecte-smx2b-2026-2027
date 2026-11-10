@@ -221,97 +221,36 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 <img src="img/imagen(1).png" alt="Esquema del projecte PackGo" width="300"> <img src="img/imagen.png" alt="Segon esquema del projecte PackGo" width="300">
 
 
-### [RBridge](https://github.com/Afix-MAB/RBridge)
-
+### RBridge - Plataforma d’accés remot
+![Linux](https://img.shields.io/badge/SO-Linux-FCC624?logo=linux&logoColor=black)
+![WireGuard](https://img.shields.io/badge/VPN-WireGuard-88171A?logo=wireguard&logoColor=white)
+![VPS](https://img.shields.io/badge/VPS-Servidor-00599C?logo=linux&logoColor=white)
+![Xarxa](https://img.shields.io/badge/XARXA-CG--NAT-2E8B57)
+![Proxmox](https://img.shields.io/badge/Proxmox-VE-E57000?logo=proxmox&logoColor=white)
 
 #### Context del projecte
+Molts proveïdors d’Internet (ISP) utilitzen [CG-NAT](https://www.xataka.com/basics/cg-nat-que-que-problemas-puede-provocar-como-saber-tienes-tu-conexion-a-internet), una forma que fa que diversos clients comparteixin una mateixa IP pública, cadascun amb la seva xarxa privada.
 
-Fa relativament poc, molts ISP (El proveidor de xarxa), utilitzen un tipus de router on n'hi ha un router pare, es a dir, que molts routers estan connectats a un servidor.
+RBridge és un servei d'accés remot pensat per a un tècnic informàtic que dona suport a petits negocis que es troben en la situació del CG-NAT. El sistema es basa en un servidor al núvol (VPS), que fa de punt de connexió, i una Raspberry Pi instal·lada a casa de cada client, que fa de connector. La connexió entre tots dos s'estableix amb [WireGuard](https://www.wireguard.com/).
 
-**¿Quin problema té?**
+Així, el tècnic pot accedir als dispositius del client des d'una web, sense que el client hagi d'obrir ports ni configurar cap protocol complicat.
 
-Doncs a l'hora de tenir una IP Publica, el servidor anomenat CG-NAT (Carrier-grade NAT), ens dona una IP Privada dins de la seva xarxa, fent que el servidor funcioni només amb una IP Publica, aixi estalviant IP's publiques, que actualment tenim un problema global amb aquestes.
-```mermaid
-graph TD;
-    ROUTER1-->|20.40.20.1|CG-NAT;
-    ROUTER1-->|PRIVATE IP|CG-NAT;
-    CG-NAT-->|PUBLIC IP|INTERNET;
-```
-Com a usuari normal no té cap problema per cercar en internet ni ens llimita, el vertader problema es quan un servei tecnic remot intenta fer un servei, normalment el que es feia es utilitzar la IP publica del router per tenir un port o un tunnel directe a la xarxa del client, on el CG-NAT, fa que no tinguem possibilitat de connectar-se'n de forma tradicional.
+#### Problema
+Alguns operadors, com Digi, Movistar o O2, [utilitzen CG-NAT](https://www.redeszone.net/tutoriales/redes-cable/operadores-usan-cg-nat-internet/). Això pot fer que tot un grup d'empreses d'un mateix edifici comparteixin la mateixa IP pública, separades entre diferents privades.
 
-**¿Quina solució n'hi ha?**
+En aquests casos, no es pot accedir als equips des de fora de la xarxa. Teòricament es poden obrir ports al router, però seria molt insegur, aixo ens exposaría els serveis directament a Internet.
 
-El nostre startup, crearem un eina per fer monitoratge d'equips que estiguin sota d'un CG-NAT, es resoldrà el problema de l'accesibilitat a nodes interns. Es podrà veure desde el diagrama que el CG-NAT té la IP Publica, fent aquesta restricció.
+#### Objectiu
+Dissenyar i comprovar un sistema que permeti accedir de forma segura a les xarxes dels clients, amb cada client aïllat dels altres. La gestió és farà principalment des d'una web, que permetrà controlar el túnel per accedir als dispositius.
 
-```mermaid
-graph TD;
-    node1-->|10.162.114.201|ROUTER1;
-    node2-->|10.162.114.202|ROUTER1;
-    node3-->|10.162.114.201|ROUTER2;
-    node4-->|10.162.114.202|ROUTER2;
-    ROUTER1-->|20.40.20.1|CG-NAT;
-    ROUTER2-->|20.40.20.2|CG-NAT;
-    ROUTER1-->|PRIVATE IP|CG-NAT;
-    ROUTER2-->|PRIVATE IP|CG-NAT;
-    CG-NAT-->|PUBLIC IP|INTERNET;
-```
+#### Components
+- Servidor al núvol (VPS).
+- Raspberry Pi a casa de cada client.
+- Portal de gestió, amb un formulari de selecció dels clients.
+- Web per sol·licitar els serveis del tècnic.
+- Base de dades dels dispositius dels clients.
 
-#### Abast del projecte
-
-Es tindrà en compte en la creació del projecte, els usuaris que necessiten el servei de monitoratge (els clients), la forma de la xarxa lògica, s'intentarà posar en practica, el servidor privat en xarxa per poder establir la connexió i els dispositius Raspberry per inicialitzar el tunel.
-
-#### Diagrama de Projecte
-
-**Els agents en el projecte són els següents:**
-
-**1. Xarxa**
-
- * Tècnic - Amb el seu portàtil es podrà connectar en el VPS.
-
- * WireGuard pel admin - És el túnel del tècnic fins al VPS.
-
- * WireGuard pel client - És el túnel que tindrà cada client.
-
- * FireWall - Per tindre un mínim de seguretat en la connexió, per només permetre la connexió a autoritzats.
-
- * Passarel·la - Serà la Raspberry en casa del client.
-
- * PC del client - On rebrà l'accés.
-
- * VPS -  El servidor privat que tindrem, on resideix, WireGuard (els túnels), firewall, la base de dades, el reconciliador de peticions de la web amb la bdd, i possiblement el monitoratge de connexions, memòries...
-
- > S'utilitzarà el VPS de forma simulada, també hauria de simular el portail web per les peticions del reconciliador per la base de dades.
-
-**2. Gestió**
-
- * Portal web - On el tècnic demana les sessions.
-
- * Base de dades - On es guarden els clients, sessions...
-
- * Reconciliador - Compara el que té la bdd amb el que tenim posat.
-
- > S'està pensat utilitzar Python de forma molt bàsica per crear el reconciliador.
-
- * Monitoratge - Avisa si algun node falla.
-
-**3. Serveis**
-
- * Web pública - Presenta el servei del tècnic.
-
-**4. Simulació**
-
- * Proxmox serà l'hipervisor que usaré per crear xarxes internes, els hosts, els routers, ja que és molt més avançat que VirtualBox, i té moltes més funcionalitats que ens permetran simular-ho.
-
-```mermaid
-flowchart LR;
-    T[Técnic] -->|Bridge| V[VPS]
-    VPS -->|Bridge| P[Pasarela client]
-    P --> PC[PC client]
-    VPS --> Portal[Portal web]
-    VPS --> DB[(BD)]
-    VPS --> FW[Firewall]
-    WPub[Web] --> DB
-```
+Com a possible ampliació, es intentará l'accés directe al hardware dels clients.
 
 
 ### [Remote-Smart-Plugs](https://github.com/Manuel-G-P/remote-smart-plugs)
