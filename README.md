@@ -353,10 +353,10 @@ Primer de tot, en el càs del prototip, l'empresa encarregada d'enviar el paquet
 #### Abast
 ##### Qué tindrà el sistema
 1. Un sistema de cold chain per vigilar l'estat del producte
-2. Una microbit per crear un prototip del dispositiu
+2. Una raspberry pi pico per crear un prototip del dispositiu
 3. Una micro SD per emmagatzemar les dades
-4. Sensors de temperatura per detectar la temperatura
-5. Sensors d'humitat per detectar l'humitat
+4. Sensors de temperatura i humitat dht11 per la raspberry pi pico
+5. Acceleròmetre per poder recopilar els cops rebuts
 6. Grafana per poder visualitzar les dades rebudes
 7. 2 pàgines web, una pública per veure les dades i una per configurar el dispositiu incorporat al paquet
 8. Un mesurador de gravetat per mesurar els cops que ha rebut el paquet
