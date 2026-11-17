@@ -6,7 +6,7 @@ Llista de projectes d'SMX2B del curs 2026-2027.
   - [HoloTech360](#HoloTech360), [holotech360.cat](https://holotech360.cat)
   - [MetroCount](#Metrocount), [metrocount.cat](https://metrocount.cat)
   - [PackGo](#PackGo), [packgo.cat](https://packgo.cat)
-  - [RBridge](#RBridge---Portal-d’accés-remot), [rbridge.cat](https://rbridge.cat)
+  - [RBridge](#RBridge), [rbridge.cat](https://rbridge.cat)
   - [Remote-Smart-Plugs](#Remote-Smart-Plugs), [remote-smart-plugs.cat](https://remote-smart-plugs.cat)
   - [SafeTracking](#SafeTracking), [safetracking.cat](https://safetracking.cat)
   - [WearSafe](#WearSafe), [wearsafe.cat](https://wearsafe.cat)
@@ -221,7 +221,7 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 <img src="img/imagen(1).png" alt="Esquema del projecte PackGo" width="300"> <img src="img/imagen.png" alt="Segon esquema del projecte PackGo" width="300">
 
 
-### [RBridge - Portal d’accés remot](https://github.com/Afix-MAB/RBridge.git)
+### [RBridge](https://github.com/Afix-MAB/RBridge.git)
 ![Linux](https://img.shields.io/badge/SO-Linux-FCC624?logo=linux&logoColor=black)
 ![WireGuard](https://img.shields.io/badge/VPN-WireGuard-88171A?logo=wireguard&logoColor=white)
 ![VPS](https://img.shields.io/badge/VPS-Servidor-00599C?logo=linux&logoColor=white)
