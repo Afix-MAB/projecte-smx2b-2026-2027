@@ -221,7 +221,7 @@ Aquí adjuntaré un parell d'esquemes del meu projecte.
 <img src="img/imagen(1).png" alt="Esquema del projecte PackGo" width="300"> <img src="img/imagen.png" alt="Segon esquema del projecte PackGo" width="300">
 
 
-### RBridge - Plataforma d’accés remot
+### [RBridge - Portal d’accés remot](https://github.com/Afix-MAB/RBridge.git)
 ![Linux](https://img.shields.io/badge/SO-Linux-FCC624?logo=linux&logoColor=black)
 ![WireGuard](https://img.shields.io/badge/VPN-WireGuard-88171A?logo=wireguard&logoColor=white)
 ![VPS](https://img.shields.io/badge/VPS-Servidor-00599C?logo=linux&logoColor=white)
