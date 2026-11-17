@@ -6,7 +6,7 @@ Llista de projectes d'SMX2B del curs 2026-2027.
   - [HoloTech360](#HoloTech360), [holotech360.cat](https://holotech360.cat)
   - [MetroCount](#Metrocount), [metrocount.cat](https://metrocount.cat)
   - [PackGo](#PackGo), [packgo.cat](https://packgo.cat)
-  - [RBridge](#RBridge - Portal d’accés remot), [rbridge.cat](https://rbridge.cat)
+  - [RBridge](#RBridge---Portal-d’accés-remot), [rbridge.cat](https://rbridge.cat)
   - [Remote-Smart-Plugs](#Remote-Smart-Plugs), [remote-smart-plugs.cat](https://remote-smart-plugs.cat)
   - [SafeTracking](#SafeTracking), [safetracking.cat](https://safetracking.cat)
   - [WearSafe](#WearSafe), [wearsafe.cat](https://wearsafe.cat)
